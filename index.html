@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12242d">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Summit Roofing is a fictional roofing company website concept designed by Wickens Web Co to demonstrate responsive web development.">
+  <title>Summit Roofing | Wickens Web Co Portfolio Concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy:#12242d; --navy2:#1b333d; --ink:#152932; --orange:#f3aa69; --orange2:#d97a42; --cream:#f6f4ee; --off:#eaece6; --muted:#61717a; --white:#fff; --max:1250px; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:75px; }
+    body { margin:0; font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+    button { font:inherit; cursor:pointer; }
+    :focus-visible { outline:3px solid var(--orange); outline-offset:4px; }
+    ::selection { background:var(--orange); color:var(--navy); }
+    .wrap { width:min(calc(100% - 80px),var(--max)); margin:auto; }
+    .concept { position:relative; z-index:100; background:var(--orange); color:var(--navy); text-align:center; padding:9px 16px; font-size:10px; letter-spacing:.15em; text-transform:uppercase; font-weight:800; }
+    .header { position:absolute; top:31px; left:0; width:100%; z-index:30; color:#fff; }
+    .header-inner { min-height:86px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+    .brand { display:flex; align-items:center; gap:11px; flex:none; }
+    .brand-icon { border:2px solid var(--orange); color:var(--orange); width:44px; height:44px; display:grid; place-items:center; }
+    .brand-icon svg { width:30px; height:30px; }
+    .brand-word { font-family:'Barlow Condensed',sans-serif; font-weight:900; line-height:.77; font-size:29px; letter-spacing:.025em; }
+    .brand-word small { font-family:'DM Sans',sans-serif; display:block; font-size:9px; letter-spacing:.42em; margin-top:11px; color:var(--orange); }
+    .nav { display:flex; align-items:center; gap:29px; margin-left:auto; }
+    .nav a { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; transition:color .2s; }
+    .nav a:hover { color:var(--orange); }
+    .btn { min-height:52px; padding:0 23px; display:inline-flex; align-items:center; justify-content:center; gap:17px; border:1px solid transparent; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.14em; transition:transform .25s,background .25s,color .25s; }
+    .btn:hover { transform:translateY(-3px); }
+    .btn-orange { color:var(--navy); background:var(--orange); }
+    .btn-orange:hover { background:#ffd19e; }
+    .btn-outline { border-color:#ffffff6b; color:#fff; }
+    .btn-outline:hover { color:var(--navy); background:#fff; }
+    .btn-dark { color:#fff; background:var(--navy); }
+    .menu-button { display:none; width:44px; height:44px; place-items:center; border:1px solid #ffffff77; background:transparent; color:#fff; font-size:23px; }
+    .hero { min-height:800px; padding-top:85px; position:relative; isolation:isolate; overflow:hidden; background:var(--navy); color:#fff; }
+    .hero:before { content:''; position:absolute; z-index:-2; inset:0 0 0 46%; background:linear-gradient(90deg,var(--navy),#12242d28 63%,#12242d2c), url('https://images.unsplash.com/photo-1763665814605-a6489a3bf2a0?auto=format&fit=crop&w=1700&q=85') center/cover; }
+    .hero:after { content:''; position:absolute; z-index:-1; inset:0; background:radial-gradient(ellipse at 28% 55%,#2c444335,transparent 60%); }
+    .hero-inner { position:relative; min-height:715px; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:42px 0 95px; }
+    .kicker { display:flex; align-items:center; gap:12px; color:var(--orange2); letter-spacing:.21em; text-transform:uppercase; font-size:10px; font-weight:800; }
+    .kicker:before { content:''; width:30px; height:2px; background:currentColor; }
+    .hero .kicker { color:var(--orange); }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; }
+    .hero h1 { margin:31px 0; font-size:clamp(90px,11vw,158px); line-height:.78; font-weight:800; letter-spacing:-.018em; }
+    .accent { color:var(--orange); }
+    .hero p { max-width:445px; color:#c4d1d4; font-size:14px; line-height:1.9; margin-bottom:33px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .hero-aside { position:absolute; right:0; bottom:53px; border:1px solid #ffffff61; background:#0e252ab5; backdrop-filter:blur(10px); padding:24px; width:205px; }
+    .hero-aside strong { display:block; font:800 35px/.86 'Barlow Condensed',sans-serif; }
+    .hero-aside span { display:block; font-size:10px; line-height:1.6; letter-spacing:.11em; color:#d0d9dc; text-transform:uppercase; margin-top:13px; }
+    .ribbon { background:var(--orange); }
+    .ribbon-inner { display:flex; justify-content:space-between; align-items:center; padding:22px 0; gap:15px; flex-wrap:wrap; }
+    .ribbon span { font:800 17px 'Barlow Condensed',sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+    .ribbon b { font-size:9px; }
+    .pad { padding:110px 0; }
+    .introduction { display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:end; }
+    .intro-title { margin:25px 0 0; font-size:clamp(57px,7vw,99px); line-height:.87; font-weight:800; }
+    .intro-desc p { max-width:470px; color:var(--muted); line-height:1.95; font-size:15px; }
+    .text-link { display:inline-flex; align-items:center; gap:16px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; border-bottom:2px solid var(--orange2); padding-bottom:8px; margin-top:18px; }
+    .section-heading { display:flex; align-items:end; justify-content:space-between; gap:25px; margin-bottom:46px; }
+    .section-title { font-size:clamp(57px,7.7vw,105px); font-weight:800; line-height:.85; letter-spacing:-.008em; margin:21px 0 0; }
+    .section-heading>p { max-width:330px; font-size:14px; color:var(--muted); line-height:1.85; margin:0; }
+    .services { background:var(--off); }
+    .services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
+    .service { min-height:324px; background:#fff; padding:26px 24px 30px; transition:transform .25s,background .25s,color .25s; }
+    .service:hover { transform:translateY(-7px); background:var(--navy); color:#fff; }
+    .number { color:var(--orange2); font:800 18px 'Barlow Condensed',sans-serif; }
+    .service-icon { margin:42px 0 32px; border:1px solid #dce0de; color:var(--orange2); width:58px; height:58px; display:grid; place-items:center; }
+    .service-icon svg { width:31px; height:31px; }
+    .service h3 { font-size:30px; line-height:.95; margin-bottom:14px; }
+    .service p { color:#6a7a81; font-size:12px; line-height:1.85; margin:0; }
+    .service:hover p { color:#c5d0d2; }
+    .projects { color:#fff; background:var(--navy); }
+    .projects .section-heading>p { color:#b0c2c5; }
+    .projects .kicker { color:var(--orange); }
+    .project-grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:14px; }
+    .project { height:500px; overflow:hidden; position:relative; background:var(--navy2); }
+    .project img { width:100%; height:100%; object-fit:cover; transition:transform .55s; }
+    .project:hover img { transform:scale(1.06); }
+    .project:after { content:''; position:absolute; inset:35% 0 0; background:linear-gradient(transparent,#081b23ee); }
+    .project-info { position:absolute; z-index:2; bottom:28px; left:25px; right:20px; }
+    .project-info span { color:var(--orange); font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.15em; }
+    .project-info h3 { margin:9px 0 0; font-size:34px; line-height:.95; }
+    .disclaimer { font-size:11px; line-height:1.65; color:#b7c6c7; margin:18px 0 0; }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(35px,7vw,120px); align-items:center; }
+    .about-image { position:relative; height:615px; background:#849594; }
+    .about-image img { width:100%; height:100%; object-fit:cover; }
+    .image-tag { position:absolute; right:-20px; bottom:-23px; padding:22px 23px; background:var(--orange); font:800 31px/.9 'Barlow Condensed',sans-serif; text-transform:uppercase; }
+    .about-copy>p { margin:28px 0; color:var(--muted); font-size:14px; line-height:2; max-width:510px; }
+    .about-values { border-top:1px solid #cfd3ce; padding-top:22px; display:flex; flex-wrap:wrap; gap:35px; }
+    .about-values span { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .about-values strong { display:block; margin-top:10px; font:800 28px 'Barlow Condensed',sans-serif; text-transform:uppercase; }
+    .process { background:#e1e5df; }
+    .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    .process-step { border-top:2px solid var(--navy); padding-top:25px; }
+    .process-step b { font:800 67px/.8 'Barlow Condensed',sans-serif; color:#b1beb9; }
+    .process-step h3 { font-size:30px; margin:38px 0 12px; }
+    .process-step p { color:var(--muted); font-size:12px; line-height:1.85; }
+    .faq-grid { display:grid; grid-template-columns:.75fr 1.25fr; gap:70px; }
+    .faq-list { border-top:1px solid #cfd3ce; }
+    details { border-bottom:1px solid #cfd3ce; padding:23px 0; }
+    summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:14px; font-weight:700; }
+    summary::-webkit-details-marker { display:none; }
+    summary:after { content:'+'; font-size:25px; color:var(--orange2); font-weight:400; }
+    details[open] summary:after { content:'−'; }
+    details p { color:var(--muted); line-height:1.8; font-size:13px; margin:15px 0 0; }
+    .callout { background:var(--orange2); padding:83px 0; }
+    .callout-inner { display:flex; align-items:center; justify-content:space-between; gap:30px; }
+    .callout .kicker { color:var(--navy); }
+    .callout h2 { font-size:clamp(65px,9vw,120px); margin:20px 0 0; line-height:.8; }
+    .footer { background:#0d1b23; color:#fff; padding:75px 0 25px; }
+    .footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding-bottom:55px; }
+    .footer-about p { max-width:300px; color:#adbdc1; font-size:13px; line-height:1.8; margin-top:25px; }
+    .footer h3 { color:var(--orange); font-size:22px; }
+    .footer-col a { display:block; margin:0 0 15px; font-size:12px; color:#dae3e5; }
+    .footer-col a:hover { text-decoration:underline; }
+    .footer-note { border:1px solid #65777d; display:inline-block; padding:9px; font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:var(--orange); }
+    .footer-bottom { border-top:1px solid #35464d; padding-top:24px; display:flex; justify-content:space-between; gap:20px; font-size:10px; line-height:1.7; color:#aebcc1; }
+    .footer-bottom p { margin:0; }
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s,transform .65s; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media(max-width:1050px) { .nav { gap:16px; } .header-cta { display:none; } .services-grid { grid-template-columns:repeat(2,1fr); } .service { min-height:270px; } .project-grid { grid-template-columns:1fr 1fr; } .project:first-child { grid-column:span 2; } .project { height:440px; } .introduction { gap:40px; } }
+    @media(max-width:760px) {
+      .wrap { width:calc(100% - 38px); }
+      .concept { font-size:8px; letter-spacing:.06em; }
+      .header { top:29px; }
+      .header-inner { min-height:73px; }
+      .brand-word { font-size:24px; } .brand-icon { width:39px; height:39px; }
+      .menu-button { display:grid; }
+      .nav { display:none; flex-direction:column; align-items:stretch; gap:0; background:#0c1d26; border-top:1px solid #ffffff33; position:absolute; top:73px; left:0; width:100%; padding:15px 24px; box-shadow:0 14px 22px #0005; }
+      .nav.open { display:flex; }
+      .nav a { font-size:12px; padding:13px 0; }
+      .hero { min-height:825px; padding-top:80px; }
+      .hero:before { inset:37% 0 0; background:linear-gradient(180deg,var(--navy),#12242d44 35%,#12242d90),url('https://images.unsplash.com/photo-1763665814605-a6489a3bf2a0?auto=format&fit=crop&w=1050&q=80') center/cover; }
+      .hero-inner { min-height:745px; justify-content:flex-start; padding:77px 0 90px; }
+      .hero h1 { font-size:clamp(72px,17vw,120px); margin:30px 0 23px; }
+      .hero p { font-size:13px; max-width:360px; } .btn { padding:0 18px; min-height:49px; }
+      .hero-aside { right:0; bottom:25px; width:170px; padding:18px; }
+      .hero-aside strong { font-size:29px; }
+      .ribbon-inner { justify-content:center; gap:8px 15px; padding:17px 0; }
+      .ribbon span { font-size:13px; } .ribbon b { font-size:8px; }
+      .pad { padding:76px 0; }
+      .introduction,.about-grid,.faq-grid { grid-template-columns:1fr; gap:28px; }
+      .intro-title { font-size:clamp(56px,12vw,82px); }
+      .section-heading { display:block; margin-bottom:30px; } .section-heading>p { margin-top:20px; }
+      .section-title { font-size:clamp(57px,12vw,83px); }
+      .services-grid { gap:10px; } .service { padding:22px 18px; min-height:275px; }
+      .service h3 { font-size:27px; } .service-icon { margin:24px 0; }
+      .project-grid { grid-template-columns:1fr; } .project:first-child { grid-column:auto; } .project { height:385px; } .project:first-child { height:450px; }
+      .about-image { height:465px; margin-right:18px; } .image-tag { right:-18px; } .about-copy { padding-top:18px; }
+      .process-grid { grid-template-columns:1fr 1fr; gap:30px 20px; }
+      .process-step h3 { margin-top:27px; }
+      .callout-inner { display:block; } .callout h2 { margin-bottom:28px; }
+      .footer-grid { grid-template-columns:1fr 1fr; gap:35px 20px; } .footer-about { grid-column:1/-1; }
+      .footer-bottom { display:block; } .footer-bottom p+p { margin-top:14px; }
+    }
+    @media(max-width:410px) { .hero h1 { font-size:72px; } .services-grid { grid-template-columns:1fr; } .service { min-height:215px; } .service-icon { margin:18px 0; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; animation:none!important; } .reveal { opacity:1; transform:none; } }
+  </style>
+</head>
+<body>
+  <div class="concept">Portfolio concept by Wickens Web Co · Fictional business · Not a live roofing service</div>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a href="#home" class="brand" aria-label="Summit Roofing - back to home">
+        <span class="brand-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 18 16 5l13 13M7 17v11h18V17M13 28v-9h7v9"/></svg></span>
+        <span class="brand-word">SUMMIT<small>ROOFING</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#services">Our Services</a><a href="#projects">Our Work</a><a href="#about">About</a><a href="#process">Our Process</a>
+      </nav>
+      <a class="btn btn-orange header-cta" href="#contact">Explore the concept <span aria-hidden="true">↗</span></a>
+      <button id="menu-button" class="menu-button" aria-label="Open navigation" aria-controls="nav" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-inner">
+        <div class="kicker">A higher standard for your home</div>
+        <h1>BUILT<br>TO LAST<span class="accent">.</span><br>MADE TO<br>PROTECT<span class="accent">.</span></h1>
+        <p>Dependable roofing. Considered craftsmanship. A better experience, from the first conversation to the final detail.</p>
+        <div class="hero-actions"><a href="#services" class="btn btn-orange">Explore services <span aria-hidden="true">↗</span></a><a href="#projects" class="btn btn-outline">See our work <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-aside"><strong>CRAFTED<br>WITH CARE.</strong><span>Strong roofs. Strong first impressions.</span></div>
+      </div>
+    </section>
+    <div class="ribbon"><div class="wrap ribbon-inner"><span>Roof replacements</span><b>◆</b><span>Repairs</span><b>◆</b><span>Flat roofing</span><b>◆</b><span>Guttering</span><b>◆</b><span>Inspections</span></div></div>
+    <section class="pad"><div class="wrap introduction"><div class="reveal"><div class="kicker">A different outlook</div><h2 class="intro-title">A GOOD ROOF<br>CHANGES<br><span style="color:var(--orange2)">EVERYTHING.</span></h2></div><div class="intro-desc reveal"><p>Every home deserves a roof that's built for the long run. Whether it's an urgent repair or a complete transformation, we believe every detail matters — from the materials above you to the people beside you.</p><a href="#about" class="text-link">More about our approach <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="services pad" id="services"><div class="wrap"><div class="section-heading reveal"><div><div class="kicker">What we do</div><h2 class="section-title">EVERY ROOF.<br>EVERY DETAIL.</h2></div><p>A straightforward approach to every stage of roofing, with quality and clarity at the centre of each service.</p></div>
+      <div class="services-grid">
+        <article class="service reveal"><span class="number">01 /</span><span class="service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 16 16 5l14 11M6 15v13h20V15M11 28v-8h10v8"/></svg></span><h3>Roof<br>Replacements</h3><p>A fresh start for your property, designed with durability and detail in mind.</p></article>
+        <article class="service reveal"><span class="number">02 /</span><span class="service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 7h18v18H7zM11 11l10 10M21 11 11 21"/></svg></span><h3>Roof<br>Repairs</h3><p>Thoughtful solutions for leaks, weather damage and worn roofing elements.</p></article>
+        <article class="service reveal"><span class="number">03 /</span><span class="service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 13h26M7 13v14M25 13v14M11 8h10M11 21h10M11 27h10"/></svg></span><h3>Flat<br>Roofing</h3><p>Practical, refined roofing systems built around your property's requirements.</p></article>
+        <article class="service reveal"><span class="number">04 /</span><span class="service-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h22v5H5zM9 12v8c0 5 3 8 7 8s7-3 7-8v-8M16 16v9"/></svg></span><h3>Gutters &amp;<br>Maintenance</h3><p>Protecting the small details that help keep a building performing.</p></article>
+      </div>
+    </div></section>
+    <section class="projects pad" id="projects"><div class="wrap"><div class="section-heading reveal"><div><div class="kicker">Selected visuals</div><h2 class="section-title">WORK THAT<br>SPEAKS VOLUMES.</h2></div><p>Visual examples of the type of craftsmanship and service a roofing company could showcase.</p></div>
+      <div class="project-grid">
+        <article class="project reveal"><img src="https://images.unsplash.com/photo-1726589004565-bedfba94d3a2?auto=format&fit=crop&w=1000&q=80" alt="Roofer working carefully on a tiled roof" loading="lazy"><div class="project-info"><span>Illustrative photography / 01</span><h3>Attention to every tile</h3></div></article>
+        <article class="project reveal"><img src="https://images.unsplash.com/photo-1763665814538-8ba04597286c?auto=format&fit=crop&w=900&q=80" alt="Team installing the roof on a building" loading="lazy"><div class="project-info"><span>Illustrative photography / 02</span><h3>Built with confidence</h3></div></article>
+        <article class="project reveal"><img src="https://images.unsplash.com/photo-1763665814605-a6489a3bf2a0?auto=format&fit=crop&w=900&q=80" alt="Roofing workers installing shingles" loading="lazy"><div class="project-info"><span>Illustrative photography / 03</span><h3>Care from the ground up</h3></div></article>
+      </div><p class="disclaimer">These are illustrative stock photographs, not projects completed by a real Summit Roofing company. This entire website is a fictional portfolio example.</p>
+    </div></section>
+    <section class="pad" id="about"><div class="wrap about-grid"><div class="about-image reveal"><img src="https://images.unsplash.com/photo-1763665814538-8ba04597286c?auto=format&fit=crop&w=1050&q=85" alt="Workers constructing a roof" loading="lazy"><span class="image-tag">BUILT ON<br>DETAIL.</span></div><div class="about-copy reveal"><div class="kicker">Our philosophy</div><h2 class="section-title">THE<br>STANDARD<br>IS HIGHER<br>UP HERE.</h2><p>A roof does more than complete a building. It protects the people, belongings and memories inside. We believe that deserves an approach built around clear communication, meticulous detail and pride in the finished work.</p><div class="about-values"><div><span>Our mindset</span><strong>QUALITY FIRST</strong></div><div><span>Our approach</span><strong>NO SHORTCUTS</strong></div></div></div></div></section>
+    <section class="process pad" id="process"><div class="wrap"><div class="section-heading reveal"><div><div class="kicker">Simple by design</div><h2 class="section-title">HOW IT<br>ALL COMES TOGETHER.</h2></div><p>Clear steps, from the first conversation to the finishing details.</p></div><div class="process-grid">
+      <div class="process-step reveal"><b>01</b><h3>Let's talk</h3><p>Tell us about your property, concerns and the outcome you want to achieve.</p></div>
+      <div class="process-step reveal"><b>02</b><h3>Find a solution</h3><p>Explore the right approach, materials and scope for your project.</p></div>
+      <div class="process-step reveal"><b>03</b><h3>Make it happen</h3><p>Bring the project together with craftsmanship and attention to detail.</p></div>
+      <div class="process-step reveal"><b>04</b><h3>Finish well</h3><p>Review the finishing touches and make sure every part feels considered.</p></div>
+    </div></div></section>
+    <section class="pad"><div class="wrap faq-grid"><div class="reveal"><div class="kicker">Common questions</div><h2 class="section-title">GOOD<br>QUESTIONS.<br>CLEAR<br>ANSWERS.</h2></div><div class="faq-list reveal">
+      <details><summary>How do I know if my roof needs repairing?</summary><p>Missing tiles, visible leaks or interior water stains can indicate problems. A qualified roofing professional can assess the condition and recommend appropriate work.</p></details>
+      <details><summary>Will I need a full roof replacement?</summary><p>Not always. The best option depends on the condition of the roof, the type of damage and the existing materials.</p></details>
+      <details><summary>What roofing materials are available?</summary><p>Common options include slate, concrete and clay tiles, along with specialist systems for flat roofs.</p></details>
+      <details><summary>Is Summit Roofing a real business?</summary><p>No. It is a fictional concept developed by Wickens Web Co to demonstrate website design, mobile responsiveness, layout and interactions.</p></details>
+    </div></div></section>
+    <section class="callout" id="contact"><div class="wrap callout-inner"><div><div class="kicker">The next chapter starts here</div><h2>LOOKING UP<br>STARTS HERE.</h2></div><a href="#projects" class="btn btn-dark">Explore the concept ↗</a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap"><div class="footer-grid"><div class="footer-about"><a href="#home" class="brand"><span class="brand-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 18 16 5l13 13M7 17v11h18V17M13 28v-9h7v9"/></svg></span><span class="brand-word">SUMMIT<small>ROOFING</small></span></a><p>A bold, mobile-first concept website demonstrating bespoke design possibilities for independent trades and service businesses.</p><span class="footer-note">Design concept · Not a real company</span></div><div class="footer-col"><h3>Explore</h3><a href="#home">Home</a><a href="#services">Services</a><a href="#projects">Visual examples</a><a href="#about">About</a></div><div class="footer-col"><h3>Portfolio</h3><a href="https://github.com/wickenswebco/summit-roofing-demo" target="_blank" rel="noopener noreferrer">GitHub source</a><a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Illustrative photography from Unsplash</a><a href="https://wickenswebco.co.uk" target="_blank" rel="noopener noreferrer">Wickens Web Co</a></div></div><div class="footer-bottom"><p>© <span id="year">2026</span> Summit Roofing (fictional concept). For portfolio demonstration only.</p><p>Design &amp; development by Wickens Web Co · Responsive HTML, CSS &amp; JavaScript</p></div></div></footer>
+  <script>
+    (function(){
+      const button=document.getElementById('menu-button'),nav=document.getElementById('nav');
+      function closeMenu(){nav.classList.remove('open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open navigation');button.textContent='☰';}
+      button.addEventListener('click',()=>{const open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Close navigation':'Open navigation');button.textContent=open?'×':'☰';});
+      nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+      document.getElementById('year').textContent=new Date().getFullYear();
+      const elements=document.querySelectorAll('.reveal');
+      if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.09});elements.forEach(e=>obs.observe(e));
+      }else{elements.forEach(e=>e.classList.add('visible'));}
+    })();
+  </script>
+</body>
+</html>
